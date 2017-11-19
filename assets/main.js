@@ -15,7 +15,7 @@ function guess() {
         attempt.value++;
     } 
 
-    let checkGuess = getResults(input);
+    let checkGuess = getResults(input.value);
 
     if (checkGuess) {
         setMessage('You Win! :)');
@@ -61,14 +61,13 @@ function getResults(testInput) {
     let close = '<span class="glyphicon glyphicon-transfer"></span>';
     let wrong = '<span class="glyphicon glyphicon-remove"></span>';
 
-    let guess = testInput.value;
     let rightAnswer = answer.value;
     let codedAnswer = '';
     let countRight = 0;
 
     for (let i = 0; i < 4; i++) {
-        let current = guess[i];
-        if (rightAnswer[i] === current) {
+        let current = testInput.charAt(i);
+        if (rightAnswer.charAt(i) === current) {
             codedAnswer += right;
             countRight++;
         } else if (rightAnswer.includes(current)) {
@@ -80,7 +79,7 @@ function getResults(testInput) {
 
     let result = document.getElementById('results');
 
-    result.innerHTML += openDiv + guess + midDiv + codedAnswer + endDiv;
+    result.innerHTML += openDiv + testInput + midDiv + codedAnswer + endDiv;
     
     if (countRight === 4) {
         return true;
