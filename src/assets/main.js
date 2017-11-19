@@ -55,7 +55,7 @@ function validateInput(param) {
 function getResults(testInput) {
     let openDiv = '<div class="row"><span class="col-md-6">';
     let midDiv = '</span><div class="col-md-6">';
-    let endDiv = '</div>';
+    let endDiv = '</div></div>';
 
     let right = '<span class="glyphicon glyphicon-ok"></span>';
     let close = '<span class="glyphicon glyphicon-transfer"></span>';
